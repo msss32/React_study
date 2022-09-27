@@ -7,10 +7,10 @@ const BlockFn = () => {
   // 리액트에서 지원해주는 유용한 함수(react hook)
 
   // 빈배열은 componentDidMount라는 것.
-  useEffect(() => {
-    // 여기에서 데이터를 불러와서 UI에 렌더링 해준다.
-    console.log("componentDidMount");
-  }, []);
+  // useEffect(() => {
+  //   // 여기에서 데이터를 불러와서 UI에 렌더링 해준다.
+  //   console.log("componentDidMount");
+  // }, []);
 
   // componentDidUpdate 만들기
   // num을 주시하고 있다. 주시하는 값이 바뀌면 실행되는 함수

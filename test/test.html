@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"></script>
+    <link rel="stylesheet" href="test.css" />
+  </head>
+  <body>
+    <div class="externalContainer" id="container">
+      <div class="form-container sign-up-container">
+        <form action="#" class="externalForm">
+          <h1 class="externalh1">회원가입</h1>
+          <span class="externalSpan"
+            >아래 빈칸에 아이디와 이메일, <br />비밀번호를 입력해주세요!</span
+          >
+          <input class="externalInput" type="text" placeholder="ID" />
+          <input class="externalInput" type="email" placeholder="Email" />
+          <input class="externalInput" type="password" placeholder="Password" />
+          <br />
+          <button class="externalBtn">가입하기</button>
+        </form>
+      </div>
+      <div class="form-container sign-in-container">
+        <form action="#" class="externalForm">
+          <h1 class="externalh1">로그인</h1>
+          <br />
+          <span class="externalSpan">아이디와 비밀번호를 입력해주세요</span>
+          <input class="externalInput" type="text" placeholder="ID" />
+          <input class="externalInput" type="password" placeholder="Password" />
+          <br />
+          <button class="externalBtn">로그인</button>
+        </form>
+      </div>
+      <div class="overlay-container">
+        <div class="overlay">
+          <div class="overlay-panel overlay-left">
+            <h1 class="externalh1">헤이 Bro!</h1>
+            <p class="externalP">
+              회원가입을 완료했다면 <br />
+              아래 버튼으로 로그인을 부탁해!
+            </p>
+            <button class="ghost externalBtn" id="signIn">로그인</button>
+          </div>
+          <div class="overlay-panel overlay-right">
+            <h1 class="externalh1">안녕 친구들?</h1>
+            <p class="externalP">
+              혹시 가입하지 않은 친구가 있다면 <br />아래의 버튼을 눌러줘
+            </p>
+            <button class="ghost externalBtn" id="signUp">회원가입</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    const signUpButton = document.getElementById("signUp");
+    const signInButton = document.getElementById("signIn");
+    const container = document.getElementById("container");
+
+    signUpButton.addEventListener("click", () => {
+      container.classList.add("right-panel-active");
+    });
+
+    signInButton.addEventListener("click", () => {
+      container.classList.remove("right-panel-active");
+    });
+  </script>
+</html>
