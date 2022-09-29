@@ -43,3 +43,7 @@
 
 // 리액트에서 react-redux 라이브러리
 // npm i react-redux
+
+// Provider
+// Provider(컴포넌트) : Provider로 감싼 컴포넌트를 리덕스 저장소의 사용을 가능하게 해줌
+// Provider는 props로 store(저장소)를 전달 받음
