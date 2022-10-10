@@ -1,6 +1,13 @@
-function solution(numbers, num1, num2) {
-  var answer = numbers.splice(num1, num2);
+function solution(my_string) {
+  var answer = "";
+  for (let i of my_string) {
+    if (i === i.toUpperCase()) {
+      answer += i.toLowerCase();
+    } else if (i === i.toLowerCase()) {
+      answer += i.toUpperCase();
+    }
+  }
   return answer;
 }
 
-console.log(solution([1, 2, 3, 4, 5], 4, 7));
+console.log(solution("AcccCCC"));
