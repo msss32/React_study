@@ -1,71 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"></script>
-    <link rel="stylesheet" href="test.css" />
+    <title>CSS</title>
+    <style>
+      .list div.mode1 {
+        animation: move1 2s 1 ease;
+        animation-fill-mode: none;
+      }
+      .list div.mode2 {
+        animation: move1 2s 1 ease;
+        animation-fill-mode: forwards;
+      }
+      .list div.mode3 {
+        animation: move1 2s 1 ease;
+        animation-fill-mode: backwards;
+      }
+      .list div.mode4 {
+        animation: move1 2s 1 ease;
+        animation-fill-mode: both;
+      }
+      .list > div {
+        width: 60px;
+        height: 60px;
+        background-image: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        line-height: 60px;
+        text-align: center;
+        border-radius: 50%;
+        font-size: 12px;
+        color: #fff;
+        margin: 10px;
+        position: relative;
+      }
+      .list div.mode1 {
+        animation: move3 2s 1 ease;
+        animation-fill-mode: none;
+      }
+      .list div.mode2 {
+        animation: move3 2s 1 ease;
+        animation-fill-mode: forwards;
+      }
+      .list div.mode3 {
+        animation: move3 2s 1 ease;
+        animation-fill-mode: backwards;
+      }
+      .list div.mode4 {
+        animation: move3 2s 1 ease;
+        animation-fill-mode: both;
+      }
+
+      @keyframes move3 {
+        0% {
+          left: 0%;
+        }
+        100% {
+          left: calc(100% - 70px);
+        }
+      }
+    </style>
   </head>
   <body>
-    <div class="externalContainer" id="container">
-      <div class="form-container sign-up-container">
-        <form action="#" class="externalForm">
-          <h1 class="externalh1">회원가입</h1>
-          <span class="externalSpan"
-            >아래 빈칸에 아이디와 이메일, <br />비밀번호를 입력해주세요!</span
-          >
-          <input class="externalInput" type="text" placeholder="ID" />
-          <input class="externalInput" type="email" placeholder="Email" />
-          <input class="externalInput" type="password" placeholder="Password" />
-          <br />
-          <button class="externalBtn">가입하기</button>
-        </form>
-      </div>
-      <div class="form-container sign-in-container">
-        <form action="#" class="externalForm">
-          <h1 class="externalh1">로그인</h1>
-          <br />
-          <span class="externalSpan">아이디와 비밀번호를 입력해주세요</span>
-          <input class="externalInput" type="text" placeholder="ID" />
-          <input class="externalInput" type="password" placeholder="Password" />
-          <br />
-          <button class="externalBtn">로그인</button>
-        </form>
-      </div>
-      <div class="overlay-container">
-        <div class="overlay">
-          <div class="overlay-panel overlay-left">
-            <h1 class="externalh1">헤이 Bro!</h1>
-            <p class="externalP">
-              회원가입을 완료했다면 <br />
-              아래 버튼으로 로그인을 부탁해!
-            </p>
-            <button class="ghost externalBtn" id="signIn">로그인</button>
-          </div>
-          <div class="overlay-panel overlay-right">
-            <h1 class="externalh1">안녕 친구들?</h1>
-            <p class="externalP">
-              혹시 가입하지 않은 친구가 있다면 <br />아래의 버튼을 눌러줘
-            </p>
-            <button class="ghost externalBtn" id="signUp">회원가입</button>
-          </div>
-        </div>
-      </div>
+    <h3 class="h3">애니메이션(Animation-fill-mode)</h3>
+    <div class="list">
+      <div>mode</div>
+      <div>mode</div>
+      <div>mode</div>
+      <div>mode</div>
     </div>
+
+    <div class="btn">
+      <a href="#c" class="line">Click : 클릭하면 이미지가 움직입니다.</a
+      ><br /><br />
+      <ul>
+        <li>
+          .list div.mode1 {animation: move1 2s 1 ease; animation-fill-mode :
+          none, both;}
+        </li>
+        <li>
+          .list div.mode2 {animation: move1 2s 1 ease; animation-fill-mode :
+          forwards, none;}
+        </li>
+        <li>
+          .list div.mode3 {animation: move1 2s 1 ease; animation-fill-mode :
+          backwards;}
+        </li>
+        <li>
+          .list div.mode4 {animation: move1 2s 1 ease; animation-fill-mode :
+          both, forwards, none;}
+        </li>
+      </ul>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(".btn a").click(function () {
+        $(".list > div").eq(0).addClass("mode1");
+        $(".list > div").eq(1).addClass("mode2");
+        $(".list > div").eq(2).addClass("mode3");
+        $(".list > div").eq(3).addClass("mode4");
+      });
+    </script>
   </body>
-  <script>
-    const signUpButton = document.getElementById("signUp");
-    const signInButton = document.getElementById("signIn");
-    const container = document.getElementById("container");
-
-    signUpButton.addEventListener("click", () => {
-      container.classList.add("right-panel-active");
-    });
-
-    signInButton.addEventListener("click", () => {
-      container.classList.remove("right-panel-active");
-    });
-  </script>
 </html>

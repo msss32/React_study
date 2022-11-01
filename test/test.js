@@ -1,13 +1,11 @@
-function solution(my_string) {
-  var answer = "";
-  for (let i of my_string) {
-    if (i === i.toUpperCase()) {
-      answer += i.toLowerCase();
-    } else if (i === i.toLowerCase()) {
-      answer += i.toUpperCase();
-    }
+function solution(babbling) {
+  let babblingWord = ["aya", "ye", "woo", "ma"];
+
+  for (let i = 0; i < babbling.length; i++) {
+    babbling[i].toString();
   }
-  return answer;
+  // var answer = babbling.replace(babblingWord[0], "");
+  return babbling;
 }
 
-console.log(solution("AcccCCC"));
+console.log(solution(["aya", "yee", "u", "maa", "wyeoo"]));
